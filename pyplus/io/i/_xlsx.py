@@ -3,9 +3,13 @@ import contextlib
 
 import openpyxl
 
-def _Reader(fpath: str, *, header: bool = True) -> typing.Iterable[list[typing.Any]]:
+def _Reader(fpath: str, *, header: bool = True, index: int | None = None) -> typing.Iterable[list[typing.Any]]:
     with contextlib.closing(openpyxl.load_workbook(filename=fpath, read_only=True)) as wb:
-        ws = wb.active
+        if index is None:
+            ws = wb.active
+        else:
+            ws = wb.worksheets[index]
+
         if ws is None:
             return
 
