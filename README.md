@@ -59,7 +59,7 @@ Para ler arquivos XLS, utilize a função `xls`:
 ```python
 import pyplus.io.i
 
-for linha in pyplus.io.i.xls('caminho/para/arquivo.csv'):
+for linha in pyplus.io.i.xls('caminho/para/arquivo.xls'):
     print(linha)
 ```
 
@@ -71,7 +71,7 @@ Para ler arquivos XLSX, utilize a função `xlsx`:
 ```python
 import pyplus.io.i
 
-for linha in pyplus.io.i.xlsx('caminho/para/arquivo.csv'):
+for linha in pyplus.io.i.xlsx('caminho/para/arquivo.xlsx'):
     print(linha)
 ```
 
