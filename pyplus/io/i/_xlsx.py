@@ -13,8 +13,8 @@ def _Reader(fpath: str, *, header: bool = True, index: int | None = None) -> typ
         if ws is None:
             return
 
-        for i, row in enumerate(ws.rows): # type: ignore 
+        for i, row in enumerate(ws.iter_rows(values_only=True)): # type: ignore 
             if i == 0 and header:
                 continue
 
-            yield [cell.value for cell in row]
+            yield row
