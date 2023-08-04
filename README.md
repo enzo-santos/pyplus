@@ -2,6 +2,16 @@
 
 Um pacote de utilidades para uso interno.
 
+- [pyplus](#pyplus)
+  * [Instalação](#instalação)
+  * [Uso](#uso)
+    + [Leitura de recursos](#leitura-de-recursos)
+      - [CSV](#csv)
+      - [XLS](#xls)
+      - [XLSX](#xlsx)
+    + [Escrita de recursos](#escrita-de-recursos)
+      - [CSV](#csv-1)
+      - [URL](#url)
 
 ## Instalação
 
@@ -52,7 +62,7 @@ Contém os seguintes parâmetros adicionais:
 - `delimiter: str = ';'`: define o delimitador do arquivo de texto
 
 
-### XLS
+#### XLS
 
 Para ler arquivos XLS, utilize a função `xls`:
 
