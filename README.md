@@ -2,16 +2,15 @@
 
 Um pacote de utilidades para uso interno.
 
-- [pyplus](#pyplus)
-  * [Instalação](#instalação)
-  * [Uso](#uso)
-    + [Leitura de recursos](#leitura-de-recursos)
-      - [CSV](#csv)
-      - [XLS](#xls)
-      - [XLSX](#xlsx)
-    + [Escrita de recursos](#escrita-de-recursos)
-      - [CSV](#csv-1)
-      - [URL](#url)
+- [Instalação](#instalação)
+- [Uso](#uso)
+  * [Leitura de recursos](#leitura-de-recursos)
+    + [CSV](#csv)
+    + [XLS](#xls)
+    + [XLSX](#xlsx)
+  * [Escrita de recursos](#escrita-de-recursos)
+    + [CSV](#csv-1)
+    + [URL](#url)
 
 ## Instalação
 
@@ -41,7 +40,7 @@ import pyplus.io.i
 
 Todas as funções desse módulo contém os seguintes parâmetros:
 
-- `header: bool = False`: se verdadeiro, ignora a primeira linha do arquivo
+- `skiprows: int = 0`: ignora a quantidade especificada de linhas no começo do arquivo
 
 
 #### CSV
@@ -51,7 +50,7 @@ Para ler arquivos CSV, utilize a função `csv`:
 ```python
 import pyplus.io.i
 
-for linha in pyplus.io.i.csv('caminho/para/arquivo.csv'):
+for linha in pyplus.io.i.csv_lines('caminho/para/arquivo.csv'):
     print(linha)
 ```
 
@@ -69,7 +68,7 @@ Para ler arquivos XLS, utilize a função `xls`:
 ```python
 import pyplus.io.i
 
-for linha in pyplus.io.i.xls('caminho/para/arquivo.xls'):
+for linha in pyplus.io.i.xls_lines('caminho/para/arquivo.xls'):
     print(linha)
 ```
 
@@ -81,7 +80,7 @@ Para ler arquivos XLSX, utilize a função `xlsx`:
 ```python
 import pyplus.io.i
 
-for linha in pyplus.io.i.xlsx('caminho/para/arquivo.xlsx'):
+for linha in pyplus.io.i.xlsx_lines('caminho/para/arquivo.xlsx'):
     print(linha)
 ```
 
