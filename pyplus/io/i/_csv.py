@@ -9,7 +9,7 @@ M = typing.TypeVar("M")
 def _read_lines(
     fpath: str,
     *,
-    delimiter=";",
+    delimiter: str = ";",
     skiprows: int = 0,
 ) -> typing.Iterator[list[str]]:
     with open(fpath, encoding="utf-8") as f:
@@ -24,7 +24,7 @@ def _read_lines(
 def _read_models(
     fpath: str,
     *,
-    delimiter=";",
+    delimiter: str = ";",
     header: int = 0,
     converter: typing.Callable[[dict[str, str]], M],
 ) -> typing.Iterator[M]:
@@ -33,6 +33,5 @@ def _read_models(
         if header:
             file = itertools.islice(file, header, None)
 
-        reader = csv.DictReader(file, delimiter=";")
-        for record in reader:
-            yield converter(record)
+        reader = csv.DictReader(file, delimiter=delimiter)
+        yield from map(converter, reader)
