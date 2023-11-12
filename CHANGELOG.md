@@ -7,6 +7,14 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.2.1] - 2023-11-12
+### Added
+- `encoding` parameter to `pyplus.io.i.csv_*` functions
+- Tests for reading CSV files
+
+### Fixed
+- `delimiter` parameter of `pyplus.io.i.csv_models` now works
+
 ## [0.2.0] - 2023-11-11
 ### Added
 - Model support for `pyplus.io.i` as `csv_models`, `xls_models` and `xlsx_models`
